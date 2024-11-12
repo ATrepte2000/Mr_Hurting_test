@@ -143,3 +143,33 @@ if user_input := st.chat_input("..."):
     except Exception as e:
         st.error("Ein Fehler ist aufgetreten. Bitte überprüfe die API-Konfiguration oder versuche es später erneut.")
         st.write(e)
+
+import streamlit as st
+import openai
+import json
+import os
+
+# ... Dein bisheriger Code ...
+
+# Füge diesen Code am Ende deiner Datei hinzu, nachdem die Antwort des Chatbots angezeigt wurde
+
+# Erstelle einen Ordner zum Speichern der Konversationen, falls nicht vorhanden
+if not os.path.exists('conversations'):
+    os.makedirs('conversations')
+
+# Generiere einen eindeutigen Dateinamen für jede Sitzung
+session_id = st.session_state.get('session_id', None)
+if session_id is None:
+    import uuid
+    session_id = str(uuid.uuid4())
+    st.session_state['session_id'] = session_id
+
+# Pfad zur Konversationsdatei
+conversation_file = f'conversations/conversation_{session_id}.txt'
+
+# Speichere die Konversation in der Datei
+with open(conversation_file, 'w') as f:
+    for message in st.session_state.messages:
+        if message['role'] != 'system':
+            f.write(f"{message['role'].capitalize()}: {message['content']}\n\n")
+
