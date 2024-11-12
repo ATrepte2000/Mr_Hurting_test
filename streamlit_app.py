@@ -173,3 +173,20 @@ with open(conversation_file, 'w') as f:
         if message['role'] != 'system':
             f.write(f"{message['role'].capitalize()}: {message['content']}\n\n")
 
+
+# Füge diesen Code an einer geeigneten Stelle in deiner App hinzu, z.B. am Ende
+
+# Konversation als Text zusammenfassen
+conversation_text = ""
+for message in st.session_state.messages:
+    if message['role'] != 'system':
+        conversation_text += f"{message['role'].capitalize()}: {message['content']}\n\n"
+
+# Download-Button anzeigen
+st.download_button(
+    label="📥 Konversation herunterladen",
+    data=conversation_text,
+    file_name='konversation.txt',
+    mime='text/plain'
+)
+
