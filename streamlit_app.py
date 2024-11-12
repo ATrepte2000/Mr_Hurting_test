@@ -71,7 +71,7 @@ with st.container():
 st.markdown(
     """
     <div style="text-align: center; margin-top: 50px;">
-        <img src="https://your-logo-url.com/logo.png" alt="Logo" width="150">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSldpssSMyDjL8BK9N7EW2gjodVa0GjsW2wVg&s" alt="Logo" width="150">
     </div>
     """,
     unsafe_allow_html=True
