@@ -2,6 +2,102 @@ import streamlit as st
 import openai
 
 
+
+# Configure page layout
+st.set_page_config(page_title="Mr Hurting - Your Negotiation Partner", page_icon="💬", layout="centered")
+
+# Add background image
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://your-image-url.com/background.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Transparent background for the content
+st.markdown(
+    """
+    <style>
+    .transparent-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+with st.container():
+    st.markdown('<div class="transparent-container">', unsafe_allow_html=True)
+
+    # Title with Emoji
+    st.markdown(
+        "<h1 style='text-align: center; color: #1F4E79;'>💬 Mr Hurting - Your Negotiation Partner</h1>",
+        unsafe_allow_html=True
+    )
+
+    # Add a horizontal line
+    st.markdown("<hr>", unsafe_allow_html=True)
+
+    # Description with larger font and color
+    st.markdown(
+        "<h3 style='text-align: center; color: #1F4E79;'>This Chatbot will help you to train your negotiation skills.</h3>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<p style='text-align: center; font-size: 18px;'>Read the role card provided below and adapt to your role. The Chatbot will play the role of Mr. Hurting.</p>",
+        unsafe_allow_html=True
+    )
+
+    # Role card in an expandable section
+    with st.expander("📝 Show Your Role Card"):
+        st.write("""
+        **Your Role Card:**  
+        The company Zusetzer (located only 50 km away from your place of business) has been supplying the chemical additive 435 in 25 kg containers for 5 years because it is easier to handle. Suddenly the company is complaining about impurities in the process. Previously there were no such defects. The last delivery consisted of 100 buckets of 25 kg, 6,- EUR/kg. In the last process, 25 buckets from the last delivery were used at the same time.
+
+        Since you were only able to neutralize the impurities that you detected after filling by purchasing and adding the brightener Blendi, you incurred additional costs of 10% of the purchase price and treatment costs, the amount of which was stated by your production department to be EUR 4,500. Of this, EUR 1,200 are wages, the rest relates to cleaning the system. The only approved competitor, Chemie AG, charges 15 % more than Zusetzer because it is 300 km away from your place of business and has to charge higher freight costs.
+
+        You occupy 20% of Zusetzer's capacity with your orders.  
+        Your annual turnover is approx. 1,200 buckets of 25 kg each, you cannot process larger units!  
+        **Goal:**  
+        The quality must return to its former state.  
+        You must achieve reimbursement of the additional price and treatment costs.  
+        The remaining stock quantity must be exchanged for the old quality.
+        """)
+
+    # Prompt to start the conversation
+    st.markdown("<hr>", unsafe_allow_html=True)
+    st.markdown(
+        "<h3 style='text-align: center;'>Just start the conversation with Mr. Hurting here:</h3>",
+        unsafe_allow_html=True
+    )
+
+    # Input field for the chat (this part depends on your chat implementation)
+    user_input = st.text_input("You:", "")
+
+    # Here your chatbot logic would follow to respond to the user input
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Footer with image or logo
+st.markdown(
+    """
+    <div style="text-align: center; margin-top: 50px;">
+        <img src="https://your-logo-url.com/logo.png" alt="Logo" width="150">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Titel und Beschreibung anzeigen
 st.title("💬 Mr Hurting - Your Negotiation Partner")
 st.write("This Chatbot will help you to train your negotiation Skills. Read the role card provided below and adapt to your role. The Chatbot will play the role of Mr. Hurting ")
@@ -55,7 +151,7 @@ for message in st.session_state.messages:
             st.markdown(message["content"])
 
 # Chat-Eingabefeld für Benutzernachrichten
-if user_input := st.chat_input("Your response..."):
+if user_input := st.chat_input("Just start the conversation with Mr. Hurting here."):
     # Benutzer-Nachricht hinzufügen
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
