@@ -11,12 +11,13 @@ The company Zusetzer (located only 50 km away from your place of business) has b
 Since you were only able to neutralize the impurities that you detected after filling by purchasing and adding the brightener Blendi, you incurred additional costs of 10% of the purchase price and treatment costs, the amount of which was stated by your production department to be EUR 4,500. Of this, EUR 1,200 are wages, the rest relates to cleaning the system. The only approved competitor, Chemie AG, charges 15 % more than Zusetzer because it is 300 km away from your place of business and has to charge higher freight costs.
 You occupy 20% of Zusetzer's capacity with your orders. 
 Your annual turnover is approx. 1,200 buckets of 25 kg each, you cannot process larger units! 
-
 Goal:
 The quality must return to its former state.
 You must achieve reimbursement of the additional price and treatment costs.  
 The remaining stock quantity must be exchanged for the old quality.
 """)
+st.write("Just start the conversation with Mr. Hurting here.")
+
 openai.api_key = st.secrets["openai_api_key"]
 
 # Vollständiger Prompt für den Chatbot, der die Phasen des Gibbs Reflection Cycle enthält
