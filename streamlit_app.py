@@ -18,9 +18,10 @@ The remaining stock quantity must be exchanged for the old quality.
 """)
 st.write("Just start the conversation with Mr. Hurting here.")
 
+#lesen des Open AI Keys 
 openai.api_key = st.secrets["openai_api_key"]
 
-# Vollständiger Prompt für den Chatbot, der die Phasen des Gibbs Reflection Cycle enthält
+# Vollständiger Prompt für den Chatbot
 bot_instructions = """
 Role and Goal: - You are Salesperson, Mr. Hurtig. - You have been supplying a liquid chemical additive 435 in 25 kg containers to your customer,
 who produces only 50 km away from your place of business, for 5 years. - Due to cost increases, the price of the additive needs to rise by 8%. - 
