@@ -11,7 +11,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://www.dico-ev.de/wp-content/uploads/2016/08/Fotolia_80110205_M.jpg");
+        background-image: url("https://media.istockphoto.com/id/1359818120/de/vektor/wellentexturen-wei%C3%9Fer-hintergrund-abstrakte-moderne-grauwei%C3%9Fe-wellen-und-linienmustervorlage.jpg?s=612x612&w=0&k=20&c=uOWlLFdo8Hm3D4sV5b2xh45H9yi8W9gMmMvwqSLZ2js=");
         background-size: cover;
         background-position: center;
     }
