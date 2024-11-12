@@ -11,7 +11,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://your-image-url.com/background.jpg");
+        background-image: url("https://www.dico-ev.de/wp-content/uploads/2016/08/Fotolia_80110205_M.jpg");
         background-size: cover;
         background-position: center;
     }
