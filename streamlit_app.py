@@ -6,19 +6,6 @@ import openai
 # Configure page layout
 st.set_page_config(page_title="Mr Hurting - Your Negotiation Partner", page_icon="💬", layout="centered")
 
-# Add background image
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://media.istockphoto.com/id/1359818120/de/vektor/wellentexturen-wei%C3%9Fer-hintergrund-abstrakte-moderne-grauwei%C3%9Fe-wellen-und-linienmustervorlage.jpg?s=612x612&w=0&k=20&c=uOWlLFdo8Hm3D4sV5b2xh45H9yi8W9gMmMvwqSLZ2js=");
-        background-size: cover;
-        background-position: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # Transparent background for the content
 st.markdown(
